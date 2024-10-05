@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz 2</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Biaya Parkir</h1>
+    <label for="jamMasuk">Jam Masuk:</label><br>
+    <input type="text" id="Masuk" placeholder="Contoh: 07.25"><br>
+
+    <label for="jamKeluar">Jam Keluar:</label><br>
+    <input type="text" id="Keluar" placeholder="Contoh: 19.50"><br>
+
+    <input type="button" value="Hitung" onclick="hitungBiaya()"><br><br>
+
+    <label for="biaya">Biaya:</label><br>
+    <input type="text" id="biaya" placeholder="Rp. 0" readonly><br>
+  </div>
+
+  <script>
+    function hitungBiaya() {
+      // Mengambil nilai dari input 
+      let Masuk = document.getElementById('Masuk').value;
+      let Keluar = document.getElementById('Keluar').value;
+
+      // Memecah jam dan menit dari string input
+      let [jamMasuk, menitMasuk] = Masuk.split('.').map(Number);
+      let [jamKeluar, menitKeluar] = Keluar.split('.').map(Number);
+
+      // Konversi jam ke total menit dengan dikali 60
+      let totalMenitMasuk = (jamMasuk * 60) + menitMasuk;
+      let totalMenitKeluar = (jamKeluar * 60) + menitKeluar;
+
+      // Menghitung selisih menit masuk dan keluar
+      let totalMenit = totalMenitKeluar - totalMenitMasuk;
+
+      // Konversi total menit ke jam
+      let totalJam = Math.ceil(totalMenit / 60);
+
+      // Tarif per jam
+      const biayaPerJam = 1500;
+
+      // Menghitung total biaya
+      let totalBiaya = totalJam * biayaPerJam;
+
+      document.getElementById('biaya').value = "Rp. " + totalBiaya;
+    }
+  </script>
+</body>
+
+</html>

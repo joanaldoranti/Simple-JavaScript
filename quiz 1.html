@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tarif Ojek</h1>
+        <label for="jarak">Jarak Tempuh (km):</label><br>
+        <input type="text" id="jarak" placeholder="Masukkan jarak tempuh"><br>
+
+        <input type="button" value="Hitung Tarif" onclick="hitungTarif()"><br><br>
+        
+        <label for="tarif">Tarif Ojek:</label><br>
+        <input type="text" id="tarif" placeholder="Rp. 0" readonly><br>
+    </div>
+
+    <script>
+        function hitungTarif() {
+            // Mengambil nilai dari input 
+            let jarak = document.getElementById('jarak').value;
+
+            // Tarif per kilometer
+            const tarif = 1500;
+
+            // Menghitung total tarif
+            let tarifOjek = tarif * jarak;
+
+            document.getElementById('tarif').value = "Rp. " + tarifOjek;
+        }
+    </script>
+</body>
+
+</html>
