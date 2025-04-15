@@ -1,0 +1,58 @@
+const stringType = "Hello World"; // String
+const numberType = 42; // Integers and Floats
+const bigIntType = 9872972978973987n; // Very large numbers
+const booleanType = true; // Boolean
+const nullType = null; // Null
+const undefinedType = undefined; // Undefined
+const symbolType = Symbol("unique") // Symbol
+
+// Practice 1
+let variable = 12
+let variable2 = "fiko"
+
+console.log(variable);
+console.log(variable2);
+
+// Practice 2
+function calculate (a,b){
+    return a+b
+}
+
+let result = calculate(1,2)
+console.log(result);
+
+// Practice 3
+function calculate (a,b){
+    return a+b
+}
+
+let x = 1
+let y = 2
+let result2 = calculate(x,y)
+console.log(result2);
+
+// Practice 4
+let fruit = ["apple", "manggo", "pinapple"]
+
+console.log(fruit);
+
+// Practice 5
+let person = {
+    "name": "fiko",
+    "job": "backend"
+}
+
+console.log(person);
+
+// Practice 6
+let day = "Mon"
+if(day = "Mon"){
+    console.log("Learn with mySkill");
+}else{
+    console.log("Learn backend");
+}
+
+// Practice 7
+for(let i;i<10;i++){
+    console.log(i);
+}
